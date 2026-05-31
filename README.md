@@ -35,4 +35,4 @@ A web-based Lost and Found Management System developed as a final-year IT projec
 8. Open:
 
 ```text
-http://localhost/DEADLOCK
+http://localhost/Lost-and-Found
