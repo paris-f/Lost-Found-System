@@ -1,0 +1,273 @@
+/* =========================================================
+   Auth UI (Login / Register) — Deadlock
+   ========================================================= */
+
+/* 1) Tokens */
+:root {
+  --ink: #111827;
+  --muted: #6b7280;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+
+  --blue: #0033a0;      /* Richfield blue */
+  --blue-2: #2563eb;
+  --green: #22c55e;
+  --red: #ef4444;
+
+  --r: 16px;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s6: 24px;
+  --s8: 32px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 12px 28px rgba(0,0,0,.08);
+}
+
+/* 2) Base */
+body.auth {
+  position: sticky;
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Arial, sans-serif;
+  
+  /* 🔹 Background image setup */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), /* dark overlay for text contrast */
+    url('../assets/bg.png') center center / cover no-repeat fixed,
+    radial-gradient(900px 420px at -10% -10%, rgba(0, 51, 160, .06), transparent 60%),
+    radial-gradient(800px 420px at 110% 0%, rgba(37, 99, 235, .06), transparent 60%),
+    var(--bg);
+
+  background-blend-mode: overlay, normal, normal, normal;
+  min-height: 100vh;
+}
+
+/* 3) Layout */
+.auth-wrap {
+  min-height: calc(100vh - 140px); /* space for header/footer */
+  display: grid;
+  place-items: center;
+  padding: var(--s8) var(--s4);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(8px); /* ✅ Slight glass effect */
+}
+
+.auth-card {
+  width: min(460px, 92vw);
+  padding: clamp(20px, 3.6vw, 32px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent bar */
+.auth-accent {
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: -2px;
+  height: 6px;
+  border-radius: 8px 8px 0 0;
+  background-color: rgba(0, 0, 0, 0.3); /* adjust opacity 0.0–1.0 */
+  backdrop-filter: blur(6px);            /* optional glass blur */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 4) Headings */
+.auth-title {
+  margin: 6px 0 4px 0;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  letter-spacing: .2px;
+}
+
+/* =========================================================
+   Auth UI (Login / Register) — Deadlock
+   ========================================================= */
+
+/* 1) Tokens */
+:root {
+  --ink: #111827;
+  --muted: #6b7280;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+
+  --blue: #0033a0;      /* Richfield blue */
+  --blue-2: #2563eb;
+  --green: #22c55e;
+  --red: #ef4444;
+
+  --r: 16px;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s6: 24px;
+  --s8: 32px;
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,.06);
+  --shadow-md: 0 12px 28px rgba(0,0,0,.08);
+}
+
+/* 2) Base */
+body.auth {
+  position: sticky;
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Arial, sans-serif;
+  
+  /* 🔹 Background image setup */
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), /* dark overlay for text contrast */
+    url('../assets/bg.png') center center / cover no-repeat fixed,
+    radial-gradient(900px 420px at -10% -10%, rgba(0, 51, 160, .06), transparent 60%),
+    radial-gradient(800px 420px at 110% 0%, rgba(37, 99, 235, .06), transparent 60%),
+    var(--bg);
+
+  background-blend-mode: overlay, normal, normal, normal;
+  min-height: 90vh;
+}
+
+/* 3) Layout */
+.auth-wrap {
+  min-height: calc(100vh - 140px); /* space for header/footer */
+  display: grid;
+  place-items: center;
+  padding: var(--s8) var(--s4);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+}
+
+.auth-card {
+  width: min(460px, 92vw);
+  padding: clamp(20px, 3.6vw, 32px);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Accent bar */
+.auth-accent {
+  position: absolute;
+  left: -2px;
+  right: -2px;
+  top: -2px;
+  height: 6px;
+  border-radius: 8px 8px 0 0;
+  background: linear-gradient(90deg, var(--blue), var(--blue-2), var(--green));
+}
+
+/* 4) Headings */
+.auth-title {
+  margin: 6px 0 4px 0;
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+  letter-spacing: .2px;
+}
+
+.auth-sub {
+  margin: 0 0 var(--s4);
+  color: var(--muted);
+  font-size: .95rem;
+}
+
+/* 5) Form */
+.auth-form {
+  display: grid;
+  gap: var(--s3);
+  margin-bottom: var(--s3);
+}
+
+.auth-form label {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+  background: #fff;
+  outline: none;
+}
+
+.auth-form input:focus {
+  border-color: var(--blue-2);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+}
+
+/* 6) Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  padding: 0 20px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, filter .08s ease;
+  text-decoration: none;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn.primary {
+  background: var(--blue);
+  color: #fff;
+}
+.btn.primary:hover { filter: brightness(.96); }
+
+.auth-submit { width: 100%; margin-top: var(--s2); }
+
+/* 7) Notes & links */
+.auth-note {
+  color: var(--muted);
+  font-size: .85rem;
+  margin: var(--s2) 0;
+}
+
+.auth-switch {
+  margin: var(--s2) 0 0 0;
+  font-size: .95rem;
+}
+.auth-switch a { color: var(--blue-2); text-decoration: none; }
+.auth-switch a:hover { text-decoration: underline; }
+
+/* 8) Alerts */
+.auth-alert {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: var(--s3);
+  margin-bottom: var(--s3);
+  font-size: .95rem;
+}
+.auth-alert.error {
+  background: #fef2f2;
+  border-color: #fecaca;
+  color: #991b1b;
+}
+
+/* 9) Small screens */
+@media (max-width: 560px) {
+  .auth-card { padding: 20px; }
+}
+
+.auth-alert.success{
+  background:#ecfdf5;
+  border-color:#bbf7d0;
+  color:#065f46;
+}

@@ -1,0 +1,137 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+header {
+    background: #194a93;
+    color: rgb(181, 58, 58);
+    padding: 10px 0;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+}
+main {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.form-container, .item-card {
+    background: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.item-card {
+    border-left: 5px solid #007bff;
+}
+.lost { border-left-color: #dc3545; }
+.found { border-left-color: #28a745; }
+.item-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+.claim-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+input[type="text"], input[type="password"], input[type="email"], textarea, select {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0 15px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+button, .claim-btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.error { color: red; }
+.success { color: green; }
+
+
+/* ... [Existing CSS code above this line] ... */
+
+/* --- FOOTER STYLES --- */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    margin-top: 40px; /* Add space above the footer */
+    width: 100%;
+    /* Ensure the footer stays at the bottom of the content, not just the viewport */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+.footer-nav {
+    margin-top: 10px;
+}
+
+.footer-nav a {
+    color: #bbb;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.footer-nav a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+/* Ensure body and main stretch to allow footer to be at the bottom */
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+main {
+    flex: 1 0 auto; /* Main content takes up available space */
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%; /* Important for centering */
+}
+
+body {
+  opacity: 0;
+  animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

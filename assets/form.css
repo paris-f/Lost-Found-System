@@ -1,0 +1,165 @@
+/* ------------------------------
+   Form/Card UI for reporting pages
+------------------------------ */
+
+:root {
+  --ink: #141a22;
+  --muted: #667085;
+  --bg: #f6f8fb;
+  --card: #ffffff;
+  --border: #e6e8ee;
+  --accent: #2e86ff;      /* Richfield-ish blue */
+  --accent-2: #00a2ff;
+  --ok: #22c55e;
+  --bad: #ef4444;
+  --radius: 12px;
+  --shadow: 0 6px 22px rgba(16, 24, 40, .06);
+  --sp-2: 8px;
+  --sp-3: 12px;
+  --sp-4: 16px;
+  --sp-6: 24px;
+  --sp-8: 32px;
+}
+
+/* Page background flourish */
+.page-lost {
+  background:
+    radial-gradient(60% 60% at 80% -10%, rgba(46,134,255,.10), transparent 60%),
+    radial-gradient(60% 60% at -10% 0%, rgba(0,162,255,.10), transparent 60%),
+    #f7f9fc;
+  min-height: 100vh;
+  color: var(--ink);
+}
+
+/* Layout */
+.wrap {
+  max-width: 980px;
+  margin: var(--sp-8) auto;
+  padding: 0 var(--sp-4);
+}
+
+.page-title {
+  margin: 0 0 var(--sp-2) 0;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: .2px;
+}
+
+.accent-line {
+  width: 120px;
+  height: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  border-radius: 999px;
+  margin-bottom: var(--sp-6);
+}
+
+/* Alerts */
+.alert {
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--muted);
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: var(--sp-4) var(--sp-6);
+  box-shadow: var(--shadow);
+  margin-bottom: var(--sp-6);
+  font-weight: 600;
+}
+.alert-ok  { border-left-color: var(--ok);  }
+.alert-bad { border-left-color: var(--bad); }
+
+/* Card + Grid */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: var(--sp-6);
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-6);
+}
+
+.field-full { grid-column: 1 / -1; }
+
+.divider {
+  grid-column: 1 / -1;
+  color: var(--muted);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  border-top: 1px dashed var(--border);
+  padding-top: var(--sp-3);
+}
+
+/* Fields */
+.field label {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.field input[type="text"],
+.field input[type="file"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  outline: none;
+  font: inherit;
+  transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.field textarea { resize: vertical; }
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(46,134,255, .15);
+}
+
+.help, .muted {
+  color: var(--muted);
+  font-size: .875rem;
+  margin-top: 6px;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: var(--sp-4);
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: var(--sp-2);
+}
+
+.btn {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .06s ease, box-shadow .12s ease, background .12s ease;
+}
+
+.btn:active { transform: translateY(1px); }
+
+.btn.primary {
+  color: #fff;
+  background: linear-gradient(180deg, var(--accent), #1f6ee0);
+  box-shadow: 0 6px 18px rgba(46, 134, 255, .25);
+}
+
+.btn.primary:hover { filter: brightness(1.02); }
+
+/* Mobile */
+@media (max-width: 760px) {
+  .form-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,376 @@
+/* ====Dashboard UI – Lost & Found (Deadlock)==== */
+
+/* 1) Tokens */
+:root {
+  --ink: #111827;
+  --muted: #6b7280;
+  --bg: #f6f7fb;
+  --card: #ffffff;
+  --border: #e5e7eb;
+
+  --blue: #0033a0;      /* Richfield blue */
+  --blue-2: #2563eb;
+  --green: #22c55e;
+  --red: #ef4444;
+  --gray: #374151;
+
+  --r: 12px;
+  --s1: 4px;
+  --s2: 8px;
+  --s3: 12px;
+  --s4: 16px;
+  --s6: 24px;
+  --s8: 32px;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-md: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+/* 2) Base */
+body.dash {
+  color: var(--ink);
+  background:
+    radial-gradient(800px 400px at -10% -10%, rgba(0, 51, 160, 0.06), transparent 60%),
+    radial-gradient(700px 380px at 110% 20%, rgba(37, 99, 235, 0.06), transparent 60%),
+    var(--bg);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Ubuntu, Arial, sans-serif;
+}
+
+.wrap {
+  max-width: 1060px;
+  margin: var(--s8) auto;
+  padding: 0 var(--s4);
+}
+
+/* 3) Page title */
+.page-title {
+  margin: 0 0 var(--s3);
+  font-size: 1.8rem;
+  letter-spacing: .2px;
+}
+
+.page-title + .accent {
+  width: 160px;
+  height: 4px;
+  background: var(--blue);
+  border-radius: 3px;
+  margin-bottom: var(--s6);
+}
+
+/* 4) Card */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+}
+
+/* 5) Filter bar */
+.filter-bar {
+  display: grid;
+  grid-template-columns: 1.4fr 0.9fr auto;
+  gap: var(--s4);
+  align-items: end;
+  padding: var(--s6);
+  margin-bottom: var(--s6);
+}
+
+.field label {
+  display: block;
+  font-size: .9rem;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+input[type="text"],
+select {
+  width: 100%;
+  height: 40px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: #fff;
+  padding: 10px 12px;
+  outline: none;
+}
+
+input[type="text"]:focus,
+select:focus {
+  border-color: var(--blue-2);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, .12);
+}
+
+/* 6) Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  height: 40px;
+  padding: 0 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform .06s ease, filter .08s ease;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn.primary {
+  background: var(--blue);
+  color: #fff;
+}
+
+.btn.primary:hover {
+  filter: brightness(.96);
+}
+
+.btn.muted {
+  background: #f3f4f6;
+  color: var(--gray);
+  border-color: var(--border);
+}
+
+/* 7) Empty state */
+.empty {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--r);
+  padding: var(--s6);
+  color: var(--muted);
+}
+
+/* 8) Items grid */
+.item-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--s4);
+}
+
+@media (max-width: 1000px) {
+  .item-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .item-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.item-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: var(--s4);
+  box-shadow: var(--shadow-sm);
+  transition: transform .08s ease, box-shadow .08s ease;
+}
+
+.item-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+header.item-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s3);
+  margin-bottom: var(--s3);
+  border-radius: 15px;
+}
+
+h3.item-title {
+  margin: 0;
+  font-size: 1.05rem;
+  color: #ffffff;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 8px;
+  font-size: .78rem;
+  border-radius: 999px;
+  background: #eef2ff;
+  color: #1e40af;
+}
+
+.item-img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: var(--s3);
+}
+
+.item-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s3);
+  margin-bottom: var(--s3);
+}
+
+.item-meta dt {
+  font-size: .78rem;
+  color: var(--muted);
+}
+
+.item-meta dd {
+  margin: 2px 0 0;
+}
+
+.desc {
+  margin: 0 0 var(--s3);
+  color: #1f2937;
+}
+
+.btn.cta {
+  background: var(--blue-2);
+  color: #fff;
+  border: 0;
+}
+
+.item-card.lost .btn.cta {
+  background: var(--green);
+}
+
+.item-card.found .btn.cta {
+  background: var(--red);
+}
+
+/* 9) Chatbot */
+.chat-fab {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: none;
+  background: var(--blue);
+  color: #fff;
+  font-size: 22px;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.chatbot-modal {
+  display: none;
+  position: fixed;
+  bottom: 96px;
+  right: 28px;
+  width: 360px;
+  height: 460px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+  z-index: 1000;
+  overflow: hidden;
+  flex-direction: column;
+}
+
+.chat-header {
+  background: var(--blue);
+  color: #fff;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.chat-close {
+  background: none;
+  color: #fff;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.chat-body {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  border-bottom: 1px solid var(--border);
+}
+
+.chat-input-area {
+  display: flex;
+  gap: 8px;
+  padding: 10px;
+}
+
+.chat-input-area input {
+  flex: 1;
+  height: 38px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px 10px;
+}
+
+.msg-user {
+  text-align: right;
+  margin: 6px 0;
+  color: var(--blue-2);
+}
+
+.msg-bot {
+  text-align: left;
+  padding: 8px 10px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  margin: 6px 0;
+}
+
+/* 10) Mobile tweaks */
+@media (max-width: 720px) {
+  .filter-bar {
+    grid-template-columns: 1fr;
+  }
+
+  .chatbot-modal {
+    width: calc(100vw - 40px);
+    right: 20px;
+  }
+}
+
+/* --- L&F Assistant — fixed bottom-right --- */
+#lf-assistant {
+  position: fixed !important;
+  inset: auto 24px 24px auto;      /* right:24px; bottom:24px */
+  width: 360px;
+  max-width: 92vw;
+  max-height: calc(100vh - 96px);  /* keep it on-screen */
+  z-index: 9999;                   /* above cards/modals */
+  display: flex;
+  flex-direction: column;
+}
+
+/* panel frame (optional, if you want glassy feel) */
+#lf-assistant .lf-panel {
+  background: rgba(255,255,255,0.95);
+  border: 1px solid rgba(17,24,39,0.08);
+  border-radius: 12px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+  overflow: hidden;
+  backdrop-filter: blur(8px);
+}
+
+/* header + body scroll */
+#lf-assistant .lf-header { padding: 10px 12px; }
+#lf-assistant .lf-body   { overflow: auto; max-height: calc(100vh - 160px); }
+
+/* small screens */
+@media (max-width: 640px){
+  #lf-assistant {
+    right: 12px;
+    bottom: 12px;
+    width: 92vw;
+  }
+}
