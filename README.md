@@ -11,7 +11,7 @@ A web-based Lost and Found Management System developed as a final-year IT projec
 - Admin Dashboard
 - User Management
 - Audit Logs
-- AI Chatbot Assistant
+- Chatbot Assistant
 - Image-Based Colour Detection
 
 ## Technologies Used
