@@ -27,7 +27,7 @@ A web-based Lost and Found Management System developed as a final-year IT projec
 
 1. Install XAMPP.
 2. Start Apache and MySQL.
-3. Copy the project folder into the `htdocs` directory.
+3. Copy the project folder into the `htdocs` directory. Example: htdocs/DEADLOCK
 4. Open phpMyAdmin.
 5. Create a database named `lostfound`.
 6. Import the `lfs_db.sql` file.
