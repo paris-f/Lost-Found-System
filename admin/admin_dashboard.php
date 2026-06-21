@@ -64,7 +64,7 @@ $users_rs = $conn->query("SELECT user_id, username FROM users ORDER BY username 
 ?>
 <div class="wrap">
   <div class="page-hero">
-    <h2>Admin Dashboard 👋</h2>
+    <h2>Admin Dashboard</h2>
     <p>Welcome, <?= htmlspecialchars($_SESSION['username'] ?? 'admin') ?>. This is your central control panel.</p>
   </div>
 
